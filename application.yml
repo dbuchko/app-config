@@ -10,3 +10,11 @@ logging:
   level:
     io:
       pivotal: DEBUG
+
+---
+spring:
+  profiles: cloud
+eureka:
+  instance:
+    hostname: service-registry-db.cfapps.io
+    nonSecurePort: 80
