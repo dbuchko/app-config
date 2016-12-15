@@ -11,10 +11,18 @@ logging:
     io:
       pivotal: DEBUG
 
+eureka:
+  client:
+    serviceUrl:
+      defaulZone: http://127.0.0.1:8761/eureka/
+
 ---
 spring:
   profiles: cloud
 eureka:
   instance:
-    hostname: service-registry-db.cfapps.io
     nonSecurePort: 80
+    hostname: ${vcap.application.uris[0]}
+  client:
+    service-url:
+      defaultZone: ${vcap.services.eureka.credentials.url}
