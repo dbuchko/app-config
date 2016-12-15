@@ -25,4 +25,4 @@ eureka:
     hostname: ${vcap.application.uris[0]}
   client:
     service-url:
-      defaultZone: ${vcap.services.service-registry.credentials.url}
+      defaultZone: ${vcap.services.service-registry.credentials.uri}
